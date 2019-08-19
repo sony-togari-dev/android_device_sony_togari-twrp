@@ -1,6 +1,6 @@
 # TWRP for Sony Xperia Z3 Compact
 
-Minimal tree for building TWRP in android-9.0
+Minimal tree to build TWRP in android-9.0
 
 ## Compile
 
