@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := amami
+PRODUCT_RELEASE_NAME := togari
 
 $(call inherit-product, build/target/product/embedded.mk)
 
@@ -24,11 +24,11 @@ $(call inherit-product, vendor/omni/config/common.mk)
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.usb.pid_suffix=1A7
+    ro.usb.pid_suffix=19C
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := amami
-PRODUCT_NAME := omni_amami
+PRODUCT_DEVICE := togari
+PRODUCT_NAME := omni_togari
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := Xperia Z1 Compact
+PRODUCT_MODEL := Xperia Z Ultra
 PRODUCT_MANUFACTURER := Sony
