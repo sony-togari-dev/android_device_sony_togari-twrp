@@ -34,6 +34,7 @@ on init
     chown system system /dev/ion
 
     setprop ro.board.platform msm8974
+    setprop sys.boot.touch_fw 0
 
 on fs
     wait /dev/block/platform/msm_sdcc.1
@@ -66,3 +67,7 @@ on property:ro.crypto.state=encrypted
 on property:sys.listeners.registered=true
     start hwservicemanager
     start keymaster-3-0
+
+on property:sys.usb.config=* && property:sys.boot.touch_fw=0
+    write /sys/devices/virtual/input/max1187x/fw_update "default"
+    setprop sys.boot.touch_fw 1
