@@ -61,6 +61,13 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
     disabled
     seclabel u:r:recovery:s0
 
+service touch_fw_update /sbin/touch_fw_update.sh
+    oneshot
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 on property:ro.crypto.state=encrypted
     start sbinqseecomd
 
@@ -70,4 +77,5 @@ on property:sys.listeners.registered=true
 
 on property:sys.usb.config=* && property:sys.boot.touch_fw=0
     write /sys/devices/virtual/input/max1187x/fw_update "default"
+    start touch_fw_update
     setprop sys.boot.touch_fw 1
